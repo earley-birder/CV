@@ -1,3 +1,23 @@
+edu <- tribble(
+    ~degree, ~startMonth, ~startYear, ~endMonth, ~endYear, ~inst, ~where, ~detail,
+    "PhD Ecology", "September", 2022, "present", NA, "University of Victoria", "Victoria, BC, Canada", NA,
+    "MSc Biology", "September", 2020, "August", 2022, "University of British Columbia", "Kelowna, BC, Canada", NA,
+    "BSc Zoology (Hons.)", "September", 2015, "June", 2019, "University of British Columbia", "Kelowna, BC, Canada", NA,
+    "WaspID Course", "January", 2022, NA, NA, "Pennsylvania State University", "Online", NA,
+    "Ontario Scholar and Frence Immersion Certificate", NA, NA, NA, NA, NA, "Ontario", NA
+)
+
+tea <- tribble(
+    ~position, ~inst, ~course, ~startMonth, ~startYear, ~endMonth, ~endYear, ~detail,
+    "Teaching Assistant", "University of Victoria", "ENVS 503/603 – Graduate Research Colloquium", "September", 2023, "April", 2024, "Supervised by Dr. Brian M. Starzomski",
+    "Teaching Assistant", "University of Victoria", "ENVS 503/603 – Graduate Research Colloquium", "September", 2023, "April", 2024, "COMMUNICATION – Communicated with speakers, organizers, and participants for the smooth delivery of research seminars.",
+    "Teaching Assistant", "University of Victoria", "ENVS 503/603 – Graduate Research Colloquium", "September", 2023, "April", 2024, "MARKING – Evaluated the quality of graduate student's speakers introductions, land acknowledgements, and discussion participation.",
+    "Exam Marking Contractor", "University of Victoria", "ENVS 341 – Past, Present and Future Ecologies [Restoration Ecology]", "April", 2023, NA, NA, "Supervised by Dr. Brian M. Starzomski", 
+    "Teaching Assistant", "University of Victoria", "ENVS 341 – Past, Present and Future Ecologies [Restoration Ecology]", "January", 2023, "April", 2023, "Supervised by Dr. Brian M. Starzomski",
+    "Teaching Assistant", "University of British Columbia", "BIOL 306 – Animal Ecology", "January", 2021, "April", 2021, "Supervised by Dr. Adam T. Ford",
+    "Teaching Assistant", "University of British Columbia", "BIOL 308 – Population Biology", "September", 2020, "December", 2020, "Supervised by Dr. Robert G. Lalonde",
+)
+
 projects <- tribble(
     ~area, ~accomplishment, ~year, ~where, ~detail,
     "MuleSoft Platform Implementation", "Covered California", 2024, "Covered California IT Data Team", "Implemented the MuleSoft Anypoint Platform for Covered California involving infrastructure and developer tooling such as CICD and GitHub based automation.",
@@ -41,17 +61,6 @@ honors <- tribble(
     ~area, ~accomplishment, ~year, ~where, ~detail,
     "Phi Theta Kappa Academic Honor Society", "Granted to individuals in the 90th percentile of their graduating class", 2015, "Cosumnes River College",NA,
     "Galt Community Character Coalition Honesty Award", "Awarded by the Galt City Council", 2010, "City Of Galt",NA
-)
-
-edu <- tribble(
-    ~degree, ~startYear, ~endYear, ~inst, ~where, ~detail,
-    "Bachelors Data Analytics & Data Management", 2020, 2023, "Western Governors University", "Online", NA,
-    "Statistics I & II", 2019, 2019, "American Council on Education - Statistics.com", "Online", NA,
-    "Associate of Art (A.A.) Physical Education Teaching and Coaching", 2012, 2015, "Cosumnes River College", "Sacramento - California", "Phi Theta Kappa Academic Honor Society",
-    "Associate of Science (A.S.) Liberal Arts: Math and Science", 2012, 2015, "Cosumnes River College", "Sacramento - California", "Phi Theta Kappa Academic Honor Society",
-    "Pre-Calculus", 2011, 2011, "San Joaquin Delta College", "Stockton - California", NA,
-    "Diploma", 2007, 2011, "Galt High School", "Galt - California", "AP English Literature",
-    "Diploma", 2007, 2011, "Galt High School", "Galt - California", "AP US Government"
 )
 
 work <- tribble(

@@ -1,10 +1,8 @@
-[![](./img/cvPreview.png)](https://github.com/tallguyjenks/CV/blob/master/CV.pdf)
-
 # My Data Driven CV
 
 ## What
 
-This CV is created using the **`R`** Package [`vitae`](https://github.com/mitchelloharawild/vitae)
+This CV is created using the **`R`** Package [`vitae`](https://github.com/mitchelloharawild/vitae) and forked from Bryan Jenks' [GitHub](https://github.com/tallguyjenks/CV). There's a valuable YouTube [video](https://www.youtube.com/watch?v=cMlRAiQUdD8) from Bryan about this.
 
 ---
 
@@ -29,8 +27,8 @@ This document utilizes **RMarkdown** and is compiled through pandoc.
 
 I use various other packages with `vitae` such as `here`, `tibble`, `glue`, and `magrittr` (for the pipe _`%>%`_)
 
-With RStudio i read in my _tribbles_ contained in the `data.r` script containing all my data, then using the `vitae` functions and `glue` string literals, i create the document itself.
+With RStudio I read in my _tribbles_ contained in the `data.r` script containing all my data, then using the `vitae` functions and `glue` string literals, I create the document itself.
 
-Data exists in in the `data.r` file in the `r/` directory and is added to the CV when the script is sourced by the `RMarkdown` document in the main directory.
+Data exists in the `data.r` file in the `r/` directory and is added to the CV when the script is sourced by the `RMarkdown` document in the main directory.
 
 The header portion of the document is comprised in the `YAML` portion of the `RMarkdown` document.

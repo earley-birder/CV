@@ -1,17 +1,14 @@
 ---
-name: Bryan
-surname: Jenks
-position: "Information Technology Specialist II"
-address: "Covered California"
-profilepic: "./img/me.jpg"
-www: "bryanjenks.dev"
-email: "bryan@bryanjenks.dev"
-github: tallguyjenks
-linkedin: bryanjenks
-orcid: 0000-0002-9604-3069
+surname: Nathan G. Earley
+position: "PhD Student"
+address: "Victoria, British Columbia, Canada"
+# profilepic: "./img/NateDTB2023_KaitlynDeiderichs.jpeg"
+www: "earley-birder.github.io"
+email: "nathan.g.earley@gmail.com"
+github: earley-birder
+orcid: 0000-0003-2835-9739
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 990000
-aboutme: "I have been writing production software in a variety of languages for over 8 years for various California State Government Agencies. I have a deep driven passion for software, automation, and data Engineering. This very CV was even compiled with code."
 docname: CV
 output: vitae::awesomecv
 ---
@@ -24,6 +21,7 @@ knitr::opts_chunk$set(echo = FALSE,
 require(xfun)
 
 packages <- c('vitae'     # The CV's LaTeX Template
+             ,'dplyr'     # For easier editing
              ,'tibble'    # Data structure for tribbles
              ,'magrittr'  # The Pipe %>%
              ,'here'      # Relative File Paths
@@ -37,108 +35,44 @@ source(file = here("r","data.r"))
 
 ```
 
-# Employment
-
-```{r}
-
-work %>%
-  detailed_entries(
-    with = title,
-    what = unit,
-    why = detail,
-    when = glue::glue("{startMonth} {startYear} --> {endMonth} {endYear}",.na = ""),
-    where = where
-  )
-
-```
-
-\pagebreak
 
 # Education
 
 ```{r EDUCATION}
 
 edu %>%
-  detailed_entries(
-    with = inst,
-    what = degree,
+  vitae::detailed_entries(
+    with = degree,
+    what = inst,
     why = detail,
-    when = glue::glue("{startYear} --> {endYear}",.na = ""),
+    # when = glue::glue("{startMonth} {startYear} --> {endMonth} {endYear}"),
+    when = case_when(
+      !is.na(startMonth) & !is.na(startYear) & !is.na(endMonth) & !is.na(endYear) ~ glue::glue("{startMonth} {startYear} --> {endMonth} {endYear}"),
+      !is.na(startMonth) & !is.na(startYear) & !is.na(endMonth) & is.na(endYear) ~ glue::glue("{startMonth} {startYear} --> {endMonth}"),
+      !is.na(startYear) &  is.na(endYear) ~ glue::glue("{startMonth} {startYear}"),
+      TRUE ~ ""
+    ),
     where = where
   )
 
 ```
 
-# Skills
+# Teaching Experience
 
-```{r SKILLS}
+```{r TEACHING}
 
-skills %>%
-  detailed_entries(
-    with = area,
-    what = skills
-  )
-
-```
-
-# Honors
-
-```{r HONORS}
-
-honors %>%
-  detailed_entries(
-    with = area,
-    what = accomplishment,
+tea %>%
+  vitae::detailed_entries(
+    with = position,
+    what = course,
     why = detail,
-    when = year,
-    where = where
-  )
-
-```
-
-\pagebreak
-
-# Projects
-
-```{r PROJECTS}
-
-projects %>%
-  detailed_entries(
-    with = area,
-    what = accomplishment,
-    why = detail,
-    when = year,
-    where = where
-  )
-
-```
-
-# Works
-
-```{r WORKS}
-
-works %>%
-  detailed_entries(
-    with = area,
-    what = accomplishment,
-    why = detail,
-    when = year,
-    where = where
-  )
-
-```
-
-# Certifications
-
-```{r CERTIFICATIONS}
-
-certifications %>%
-  detailed_entries(
-    with = area,
-    what = accomplishment,
-    why = detail,
-    when = year,
-    where = where
+    # when = glue::glue("{startMonth} {startYear} --> {endMonth} {endYear}"),
+    when = case_when(
+      !is.na(startYear) & !is.na(endYear) ~ glue::glue("{startMonth} {startYear} --> {endMonth} {endYear}"),
+      !is.na(startYear) &  is.na(endYear) ~ glue::glue("{startMonth} {startYear}"),
+      TRUE ~ ""
+    ),
+    where = inst
   )
 
 ```
